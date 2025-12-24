@@ -1,0 +1,13 @@
+# Redirection par défaut pour les erreurs 404
+/* /404.html 404
+
+# Optimisation du cache pour les images (1 an)
+/*.jpg  max-age=31536000
+/*.jpeg max-age=31536000
+/*.png  max-age=31536000
+/*.svg  max-age=31536000
+/*.webp max-age=31536000
+
+# Optimisation du cache pour CSS et JS (1 semaine)
+/*.css  max-age=604800
+/*.js   max-age=604800

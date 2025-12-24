@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet : Sebou Digital - Portfolio</title>
+    <meta name="description"
+        content="Étude de cas : Site web vitrine freelance Sebou Digital - Développement web à Kénitra">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .project-hero {
+            background: linear-gradient(135deg, #0B5394 0%, #16A085 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .meta-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .meta-label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .project-image {
+            width: 100%;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-2xl);
+            margin: 2rem 0;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tech-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            background: var(--neutral-light);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .metric-card {
+            padding: 2rem;
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-top: 0.5rem;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: white;
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 100;
+            transition: all var(--transition-base);
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        @media (max-width: 768px) {
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .back-button {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Back Button -->
+    <a href="index.html#portfolio" class="back-button">
+        ← Retour
+    </a>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container" style="position: relative; z-index: 1;">
+            <div style="max-width: 800px;">
+                <span
+                    style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600;">
+                    Cas d'Étude
+                </span>
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin: 1rem 0;">
+                    Sebou Digital
+                </h1>
+                <p style="font-size: 1.25rem; opacity: 0.95; line-height: 1.6;">
+                    Site vitrine freelance pour services de création web à Kénitra
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="section">
+        <div class="container">
+
+            <!-- Project Meta -->
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Client</div>
+                    <div class="meta-value">Sebou Digital (Auto-Promotion)</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Type</div>
+                    <div class="meta-value">Site Vitrine Freelance</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Durée</div>
+                    <div class="meta-value">1 Semaine</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Année</div>
+                    <div class="meta-value">2025</div>
+                </div>
+            </div>
+
+            <!-- Project Description -->
+            <div style="max-width: 800px; margin: 3rem auto;">
+                <h2>Contexte du Projet</h2>
+                <p style="font-size: 1.125rem; line-height: 1.8; color: var(--gray-700);">
+                    Sebou Digital est mon site vitrine personnel en tant que développeur web freelance. L'objectif était
+                    de créer
+                    une présence en ligne professionnelle pour attirer des clients PME, restaurants et entrepreneurs à
+                    Kénitra et au Maroc.
+                </p>
+            </div>
+
+            <!-- Project Screenshot -->
+            <div style="margin: 4rem 0;">
+                <img src="https://via.placeholder.com/1200x800/0B5394/FFFFFF?text=Sebou+Digital+Homepage"
+                    alt="Screenshot Sebou Digital" class="project-image">
+            </div>
+
+            <!-- Key Metrics -->
+            <h2 style="text-align: center; margin-bottom: 2rem;">Résultats Clés</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">100%</div>
+                    <div class="metric-label">Responsive</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">95</div>
+                    <div class="metric-label">Score SEO</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">&lt;2s</div>
+                    <div class="metric-label">Temps de Chargement</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">7</div>
+                    <div class="metric-label">Articles Blog</div>
+                </div>
+            </div>
+
+            <!-- Technologies Used -->
+            <div style="margin: 4rem 0;">
+                <h2>Technologies Utilisées</h2>
+                <div class="tech-stack" style="margin-top: 1.5rem;">
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Responsive Design</span>
+                    <span class="tech-badge">SEO Optimized</span>
+                    <span class="tech-badge">Google Fonts</span>
+                    <span class="tech-badge">Mobile-First</span>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div style="margin: 4rem 0;">
+                <h2>Fonctionnalités Principales</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🎨 Design Moderne</h4>
+                        <p style="color: var(--gray-600); font-size: 0.9375rem;">
+                            Palette "Sebou Moderne" avec gradients et animations fluides
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📱 Mobile-First</h4>
+                        <p style="color: var(--gray-600); font-size: 0.9375rem;">
+                            100% responsive, optimisé pour tous les appareils
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🔍 SEO Optimisé</h4>
+                        <p style="color: var(--gray-600); font-size: 0.9375rem;">
+                            Meta tags, Schema.org, sitemap et robots.txt
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📚 Blog Intégré</h4>
+                        <p style="color: var(--gray-600); font-size: 0.9375rem;">
+                            7 articles professionnels avec hashtags SEO
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">💬 WhatsApp Direct</h4>
+                        <p style="color: var(--gray-600); font-size: 0.9375rem;">
+                            Bouton flottant avec animation pour contact rapide
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📧 Formulaire Contact</h4>
+                        <p style="color: var(--gray-600); font-size: 0.9375rem;">
+                            Validation complète avec format téléphone marocain
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div style="margin: 4rem 0; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h2>Processus de Développement</h2>
+
+                <div style="margin-top: 2rem;">
+                    <h4 style="color: var(--primary-color);">1. Planification & Recherche</h4>
+                    <p style="color: var(--gray-700); line-height: 1.7;">
+                        Définition des objectifs, analyse de la concurrence locale à Kénitra, choix de la palette "Sebou
+                        Moderne" inspirée de la ville.
+                    </p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="color: var(--primary-color);">2. Design System</h4>
+                    <p style="color: var(--gray-700); line-height: 1.7;">
+                        Création d'une identité visuelle cohérente avec custom properties CSS, typographie Google Fonts
+                        (Outfit + Inter) et composants réutilisables.
+                    </p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="color: var(--primary-color);">3. Développement</h4>
+                    <p style="color: var(--gray-700); line-height: 1.7;">
+                        Code HTML/CSS/JS optimisé, animations fluides, formulaire avec validation, intégration WhatsApp
+                        et navigation responsive.
+                    </p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="color: var(--primary-color);">4. Optimisation SEO</h4>
+                    <p style="color: var(--gray-700); line-height: 1.7;">
+                        Meta tags complets, Schema.org markup, création de sitemap.xml et robots.txt, optimisation pour
+                        recherches locales Kénitra.
+                    </p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="color: var(--primary-color);">5. Tests & Déploiement</h4>
+                    <p style="color: var(--gray-700); line-height: 1.7;">
+                        Tests multi-appareils, validation mobile, vérification performances, préparation guide de
+                        déploiement Netlify.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Challenges & Solutions -->
+            <div
+                style="margin: 4rem 0; background: var(--neutral-light); padding: 3rem; border-radius: var(--radius-xl);">
+                <h2>Défis & Solutions</h2>
+
+                <div style="margin-top: 2rem;">
+                    <h4 style="color: var(--secondary-color);">⚡ Challenge : Positionnement Freelance vs Agence</h4>
+                    <p style="color: var(--gray-700); line-height: 1.7; margin-top: 0.5rem;">
+                        <strong>Solution :</strong> Adaptation complète du ton et du contenu pour mettre en avant les
+                        avantages du freelance :
+                        service personnalisé, prix transparents sans frais d'agence, contact direct.
+                    </p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="color: var(--secondary-color);">⚡ Challenge : Pas de Portfolio Initial</h4>
+                    <p style="color: var(--gray-700); line-height: 1.7; margin-top: 0.5rem;">
+                        <strong>Solution :</strong> Utilisation du site Sebou Digital lui-même comme premier cas
+                        d'étude,
+                        avec exemples types (Restaurant, E-commerce) pour montrer les capacités.
+                    </p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="color: var(--secondary-color);">⚡ Challenge : Conversion de Visiteurs en Clients</h4>
+                    <p style="color: var(--gray-700); line-height: 1.7; margin-top: 0.5rem;">
+                        <strong>Solution :</strong> Bouton WhatsApp flottant avec animation, CTAs clairs,
+                        pricing transparent et trust badges (7 jours, 100%, 8000 DH).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Testimonial (simulated) -->
+            <div style="margin: 4rem 0; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <div style="font-size: 3rem; color: var(--secondary-color); margin-bottom: 1rem;">"</div>
+                <p style="font-size: 1.25rem; font-style: italic; color: var(--gray-700); line-height: 1.8;">
+                    Ce site vitrine représente exactement le niveau de qualité et de professionnalisme que je veux
+                    offrir à mes clients à Kénitra.
+                </p>
+                <div style="margin-top: 1.5rem;">
+                    <div style="font-weight: 600; color: var(--gray-900);">Développeur Sebou Digital</div>
+                    <div style="font-size: 0.875rem; color: var(--gray-500);">Freelance Web Developer • Kénitra</div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div
+                style="background: var(--gradient-hero); color: white; padding: 4rem 2rem; border-radius: var(--radius-xl); text-align: center; margin: 4rem 0;">
+                <h2 style="color: white; font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1rem;">
+                    Intéressé par un Site Similaire ?
+                </h2>
+                <p style="font-size: 1.125rem; opacity: 0.95; max-width: 600px; margin: 0 auto 2rem;">
+                    Je peux créer un site web professionnel adapté à votre entreprise, avec le même niveau de qualité.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="index.html#contact" class="btn btn-secondary btn-lg">
+                        📞 Demander un devis
+                    </a>
+                    <a href="index.html#portfolio" class="btn btn-accent btn-lg"
+                        style="background: white; color: var(--primary-color);">
+                        Voir d'autres projets
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--gray-900); color: var(--gray-300); padding: var(--spacing-xl) 0;">
+        <div class="container text-center">
+            <p>© 2025 Sebou Digital. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

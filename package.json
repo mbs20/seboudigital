@@ -1,0 +1,14 @@
+{
+  "name": "sebou-digital",
+  "version": "1.0.0",
+  "description": "Freelance Web Project - Sebou Digital",
+  "scripts": {
+    "build": "echo 'No frontend build needed - static site'"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "pg": "^8.11.3"
+  }
+}

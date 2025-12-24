@@ -1,0 +1,21 @@
+# Robots.txt pour Sebou Digital
+# https://www.seboudigital.ma/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://www.seboudigital.ma/sitemap.xml
+
+# Crawl-delay pour les bots
+Crawl-delay: 1
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /

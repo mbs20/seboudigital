@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Jardin de Sebou - Restaurant Traditionnel à Kénitra</title>
+    <meta name="description"
+        content="Restaurant marocain traditionnel au cœur de Kénitra. Cuisine authentique, ambiance conviviale. Réservez votre table.">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Import Elegant Font */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+        :root {
+            --restaurant-primary: #a72d36;
+            /* Un rouge plus profond, plus "rubis" */
+            --restaurant-gold: #c5a059;
+            /* Un or plus doux et élégant */
+            --restaurant-dark: #1a1a1a;
+            --bg-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c5a059' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--restaurant-dark);
+            background-color: #fcfbf7;
+            /* Fond blanc cassé chaud */
+        }
+
+        h1,
+        h2,
+        h3,
+        .restaurant-logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .restaurant-hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .restaurant-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .restaurant-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .restaurant-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--restaurant-gold);
+            letter-spacing: 1px;
+        }
+
+        .restaurant-menu-nav {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .restaurant-menu-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .restaurant-menu-nav a:hover {
+            color: var(--restaurant-gold);
+        }
+
+        /* Menu Design Revamp */
+        #menu {
+            background-color: #fcfbf7;
+            background-image: var(--bg-pattern);
+            padding: 6rem 0;
+        }
+
+        #menu h2 {
+            font-size: 3rem;
+            color: var(--restaurant-primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-grid-layout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            position: relative;
+        }
+
+        /* Ligne de séparation verticale */
+        .menu-grid-layout::after {
+            content: "";
+            position: absolute;
+            top: 5%;
+            bottom: 5%;
+            left: 50%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--restaurant-gold), transparent);
+            opacity: 0.5;
+        }
+
+        .menu-category {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 3rem;
+        }
+
+        .menu-category h3 {
+            color: var(--restaurant-dark);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--restaurant-gold);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            width: 100%;
+            font-style: italic;
+        }
+
+        .menu-item {
+            display: block;
+            /* Stack vertical pour layout imprimé */
+            margin-bottom: 2rem;
+            padding-bottom: 0;
+            border-bottom: none;
+            position: relative;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            width: 100%;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .menu-header::before {
+            content: "";
+            position: absolute;
+            bottom: 6px;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px dotted #ccc;
+            z-index: 0;
+        }
+
+        .menu-item-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--restaurant-dark);
+            font-size: 1.25rem;
+            background: #fcfbf7;
+            /* Masque les points */
+            padding-right: 1rem;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .menu-item-price {
+            font-family: 'Lato', sans-serif;
+            color: var(--restaurant-primary);
+            font-weight: 700;
+            font-size: 1.125rem;
+            background: #fcfbf7;
+            /* Masque les points */
+            padding-left: 1rem;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .menu-item-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-style: italic;
+            max-width: 90%;
+        }
+
+        /* Tags alimentaires */
+        .diet-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+            color: #888;
+        }
+
+        /* Galerie & Autres */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 4px;
+            /* Coins moins arrondis pour style plus sérieux */
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .card {
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            /* Bordure dorée subtile */
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .hours-card,
+        .reservation-form {
+            border-top: 4px solid var(--restaurant-primary);
+        }
+
+        .btn {
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 2px;
+            padding: 1rem 2rem;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--restaurant-dark);
+        }
+
+        @media (max-width: 900px) {
+            .menu-grid-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .menu-grid-layout::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .restaurant-menu-nav {
+                display: none;
+            }
+
+            #menu h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* NOUVEAUX STYLES RESPONSIVE */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            line-height: 1.1;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .specialties-grid {
+                grid-template-columns: 1fr;
+                /* Une seule colonne sur mobile ! */
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 2rem;
+            }
+
+            .restaurant-nav-toggle {
+                display: flex;
+            }
+
+            .restaurant-menu-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 26, 26, 0.98);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                gap: 1.5rem;
+            }
+
+            .restaurant-menu-nav.active {
+                display: flex;
+            }
+
+            /* Ajustements cartes spécialités pour mobile */
+            .card {
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+
+        /* Mobile Toggle Styles */
+        .restaurant-nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .restaurant-nav-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: var(--restaurant-gold);
+            transition: all 0.3s;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="restaurant-nav">
+        <div class="container">
+            <div class="restaurant-logo">🍽️ Le Jardin de Sebou</div>
+
+            <button class="restaurant-nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="restaurant-menu-nav">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#reservation">Réserver</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <!-- Hero -->
+    <section class="restaurant-hero" id="accueil">
+        <div class="container">
+            <h1 class="hero-title">
+                Le Jardin de Sebou
+            </h1>
+            <p style="font-size: clamp(1.2rem, 4vw, 1.5rem); margin-bottom: 2rem; color: var(--restaurant-gold);">
+                Restaurant Marocain Traditionnel
+            </p>
+            <p style="font-size: 1.125rem; margin-bottom: 2rem; padding: 0 1rem;">
+                📍 Avenue Mohammed V, Kénitra <br class="d-md-none"> 📞 +212 720 648 919
+            </p>
+            <div class="hero-buttons">
+                <a href="#reservation" class="btn btn-lg" style="background: var(--restaurant-primary); border: none;">
+                    Réserver une table
+                </a>
+                <a href="#menu" class="btn btn-lg btn-outline" style="color: white; border-color: white;">
+                    Voir le menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <h2 style="color: var(--restaurant-dark); margin-bottom: 1rem;">Bienvenue au Jardin de Sebou</h2>
+            <p style="font-size: 1.125rem; line-height: 1.8; color: var(--gray-700);">
+                Depuis 2015, nous vous proposons une cuisine marocaine authentique dans un cadre chaleureux et
+                convivial.
+                Notre chef passionné prépare chaque plat avec des ingrédients frais et locaux, respectant les recettes
+                traditionnelles
+                transmises de génération en génération.
+            </p>
+        </div>
+    </section>
+
+    <!-- Specialties -->
+    <section class="section" style="background: var(--neutral-light);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Nos Spécialités</h2>
+            <div class="specialties-grid">
+                <div class="card text-center">
+                    <img src="tagine.png" alt="Tagine"
+                        style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%; margin: 0 auto 1rem; display: block; border: 4px solid var(--restaurant-gold);">
+                    <h3>Tagine</h3>
+                    <p style="color: var(--gray-600);">
+                        Tagine traditionnel aux légumes de saison, poulet citron-olives, agneau aux pruneaux
+                    </p>
+                </div>
+                <div class="card text-center">
+                    <img src="couscous.png" alt="Couscous Royal"
+                        style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%; margin: 0 auto 1rem; display: block; border: 4px solid var(--restaurant-gold);">
+                    <h3>Couscous</h3>
+                    <p style="color: var(--gray-600);">
+                        Notre fameux couscous royal aux sept légumes, préparé chaque vendredi
+                    </p>
+                </div>
+                <div class="card text-center">
+                    <img src="the-menthe.png" alt="Thé"
+                        style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%; margin: 0 auto 1rem; display: block; border: 4px solid var(--restaurant-gold);">
+                    <h3>Thé à la Menthe</h3>
+                    <p style="color: var(--gray-600);">
+                        Thé marocain traditionnel préparé selon l'art ancestral
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section class="section" id="menu">
+        <div class="container" style="max-width: 1100px;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <span
+                    style="color: var(--restaurant-gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Gastronomie
+                    Marocaine</span>
+                <h2>Notre Carte</h2>
+                <div style="width: 60px; height: 3px; background: var(--restaurant-gold); margin: 0 auto;"></div>
+            </div>
+
+            <div class="menu-grid-layout">
+
+                <!-- COLONNE GAUCHE -->
+                <div class="menu-column">
+
+                    <!-- Entrées -->
+                    <div class="menu-category">
+                        <h3>Entrées</h3>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Briouates au Fromage <span class="diet-tag">Végé</span></h4>
+                                <span class="menu-item-price">35 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Feuilletés croustillants triangulaires farcis au fromage frais,
+                                herbes fines et une touche de miel.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Salade Marocaine</h4>
+                                <span class="menu-item-price">25 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Mélange rafraîchissant de tomates, concombres, oignons rouges et
+                                persil, assaisonné à l'huile d'olive vierge.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Zaalouk d'Aubergines <span class="diet-tag">Vegan</span></h4>
+                                <span class="menu-item-price">30 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Caviar d'aubergines grillées et tomates confites, relevé au
+                                cumin et paprika fumé.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Harira Fassie</h4>
+                                <span class="menu-item-price">40 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Soupe traditionnelle riche et veloutée aux lentilles, pois
+                                chiches, céleri et coriandre fraîche.</div>
+                        </div>
+                    </div>
+
+                    <!-- Plats Tagine -->
+                    <div class="menu-category">
+                        <h3>Tagines Signature</h3>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Poulet Citron Confits</h4>
+                                <span class="menu-item-price">75 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Poulet fermier mijoté lentement avec des citrons confits maison
+                                et olives violettes de Marrakech.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Agneau aux Pruneaux</h4>
+                                <span class="menu-item-price">95 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Le classique sucré-salé : Gigot d'agneau fondant, pruneaux
+                                caramélisés, amandes torréfiées et sésame.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Kefta aux Œufs</h4>
+                                <span class="menu-item-price">80 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Boulettes de bœuf haché maison dans une sauce tomate onctueuse,
+                                servies avec des œufs pochés.</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COLONNE DROITE -->
+                <div class="menu-column">
+
+                    <!-- Couscous & Autres -->
+                    <div class="menu-category">
+                        <h3>Plats de Tradition</h3>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Couscous Royal (Vendredi)</h4>
+                                <span class="menu-item-price">85 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Semoule fine roulée main, sept légumes du marché, agneau, poulet
+                                et merguez grillée.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Pastilla au Poulet</h4>
+                                <span class="menu-item-price">80 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Croustillant de feuilles de brick, farce fine au poulet et
+                                amandes, saupoudré de sucre glace et cannelle.</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Tanjia Marrakchia</h4>
+                                <span class="menu-item-price">110 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Viande de bœuf marinée et cuite dans une jarre en terre cuite
+                                pendant 6 heures. Une spécialité unique.</div>
+                        </div>
+                    </div>
+
+                    <!-- Desserts & Boissons -->
+                    <div class="menu-category">
+                        <h3>Douceurs & Boissons</h3>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Thé à la Menthe <span class="diet-tag">Incontournable</span>
+                                </h4>
+                                <span class="menu-item-price">15 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Servi traditionnellement.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Cornes de Gazelle</h4>
+                                <span class="menu-item-price">25 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Fines pâtisseries à la pâte d'amande et fleur d'oranger.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Salade d'Oranges</h4>
+                                <span class="menu-item-price">20 DH</span>
+                            </div>
+                            <div class="menu-item-desc">Oranges fraîches tranchées, saupoudrées de cannelle.</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-header">
+                                <h4 class="menu-item-name">Jus d'Orange Pressé</h4>
+                                <span class="menu-item-price">20 DH</span>
+                            </div>
+                            <div class="menu-item-desc">100% naturel, pressé à la demande.</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://wa.me/212720648919?text=Bonjour, je souhaite commander" class="btn btn-lg"
+                    style="background: var(--restaurant-primary); border: none;">
+                    📱 Commander via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="section" style="background: var(--neutral-light);" id="galerie">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Galerie Photos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400" alt="Plat">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400" alt="Restaurant">
+                </div>
+                <div class="gallery-item">
+                    <img src="tagine.png" alt="Tagine">
+                </div>
+                <div class="gallery-item">
+                    <img src="couscous.png" alt="Couscous Royal">
+                </div>
+                <div class="gallery-item">
+                    <img src="the-menthe.png" alt="Thé à la Menthe">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400" alt="Ambiance">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horaires & Contact -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Horaires & Contact</h2>
+
+            <div class="contact-grid">
+
+                <!-- Horaires -->
+                <div class="hours-card">
+                    <h3 style="color: var(--restaurant-dark); margin-bottom: 1.5rem;">⏰ Heures d'Ouverture</h3>
+                    <div class="hours-row">
+                        <span style="font-weight: 600;">Lundi - Jeudi</span>
+                        <span>12h00 - 15h00 | 19h00 - 23h00</span>
+                    </div>
+                    <div class="hours-row">
+                        <span style="font-weight: 600;">Vendredi</span>
+                        <span>12h00 - 16h00 | 19h00 - 23h30</span>
+                    </div>
+                    <div class="hours-row">
+                        <span style="font-weight: 600;">Samedi - Dimanche</span>
+                        <span>12h00 - 23h30</span>
+                    </div>
+                    <div
+                        style="margin-top: 1.5rem; padding: 1rem; background: #FFF4E6; border-radius: var(--radius-md);">
+                        <strong>🎉 Couscous Royal tous les vendredis !</strong>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="hours-card">
+                    <h3 style="color: var(--restaurant-dark); margin-bottom: 1.5rem;">📞 Contactez-Nous</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <strong>Téléphone</strong><br>
+                        +212 720 648 919
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong>Adresse</strong><br>
+                        Avenue Mohammed V<br>
+                        Kénitra, Maroc
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong>Email</strong><br>
+                        contact@jardin-sebou.ma
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://wa.me/212720648919" class="btn"
+                            style="background: #25D366; border: none; width: 100%; color: white;">
+                            💬 WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Réservation -->
+    <section class="section" style="background: var(--gradient-hero); color: white;" id="reservation">
+        <div class="container" style="max-width: 600px;">
+            <h2 style="color: white; text-align: center; margin-bottom: 2rem;">Réserver une Table</h2>
+
+            <div class="card reservation-form">
+                <form>
+                    <input type="text" placeholder="Votre nom" required>
+                    <input type="tel" placeholder="Téléphone" required>
+                    <input type="email" placeholder="Email">
+                    <input type="date" required>
+                    <input type="time" required>
+                    <select required>
+                        <option value="">Nombre de personnes</option>
+                        <option value="2">2 personnes</option>
+                        <option value="4">4 personnes</option>
+                        <option value="6">6 personnes</option>
+                        <option value="8+">8 personnes ou plus</option>
+                    </select>
+                    <textarea placeholder="Demandes spéciales (allergies, occasion...)" rows="3"
+                        style="width: 100%; padding: 1rem; border: 2px solid var(--gray-300); border-radius: var(--radius-md); font-family: inherit; margin-bottom: 1rem;"></textarea>
+                    <button type="submit" class="btn btn-lg"
+                        style="background: var(--restaurant-primary); border: none; width: 100%;">
+                        Confirmer la réservation
+                    </button>
+                </form>
+                <p style="text-align: center; margin-top: 1rem; color: var(--gray-600); font-size: 0.875rem;">
+                    Ou appelez-nous directement au +212 720 648 919
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--restaurant-dark); color: white; padding: 3rem 0 1rem;">
+        <div class="container text-center">
+            <h3 style="color: var(--restaurant-gold); margin-bottom: 1rem;">Le Jardin de Sebou</h3>
+            <p style="margin-bottom: 2rem;">Restaurant Marocain Traditionnel • Kénitra</p>
+            <p style="font-size: 0.875rem; color: #999;">
+                © 2025 Le Jardin de Sebou • Site créé par Sebou Digital
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Specific Script for Restaurant Demo Mobile Menu
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.querySelector('.restaurant-nav-toggle');
+            const menu = document.querySelector('.restaurant-menu-nav');
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                    menu.classList.toggle('active');
+                });
+
+                // Close menu when clicking a link
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

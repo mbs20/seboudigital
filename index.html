@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- SEO Meta Tags -->
+    <title>Sebou Digital - Création de Sites Web à Kénitra | Freelance Web Maroc</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <meta name="description"
+        content="Sebou Digital : développeur web freelance à Kénitra. Sites vitrines, e-commerce, digitalisation pour restaurants et cafés. Service professionnel et personnalisé au Maroc. Estimation gratuite !">
+    <meta name="keywords"
+        content="création site web Kénitra, freelance web Maroc, site internet Kénitra, développement web, e-commerce Maroc, digitalisation restaurant, menu QR code, Sebou Digital">
+    <meta name="author" content="Sebou Digital">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.seboudigital.ma/">
+    <meta property="og:title" content="Sebou Digital - Création de Sites Web à Kénitra">
+    <meta property="og:description"
+        content="Développeur web freelance à Kénitra. Sites vitrines, e-commerce, digitalisation complète pour PME et restaurants. Service personnalisé.">
+    <meta property="og:image" content="https://www.seboudigital.ma/og-image.jpg">
+    <meta property="og:locale" content="fr_MA">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.seboudigital.ma/">
+    <meta property="twitter:title" content="Sebou Digital - Création de Sites Web à Kénitra">
+    <meta property="twitter:description"
+        content="Développeur web freelance pour création de sites web professionnels à Kénitra.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+
+    <!-- Schema.org Markup for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Sebou Digital",
+      "image": "https://www.seboudigital.ma/logo.png",
+      "description": "Création de sites web à Kénitra - Freelance Sites vitrines, e-commerce, digitalisation",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kénitra",
+        "addressRegion": "Rabat-Salé-Kénitra",
+        "addressCountry": "MA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "34.2530",
+        "longitude": "-6.5890"
+      },
+      "url": "https://www.seboudigital.ma",
+      "telephone": "+212720648919",
+      "priceRange": "8000-50000 MAD",
+      "areaServed": {
+        "@type": "City",
+        "name": "Kénitra"
+      }
+    }
+    </script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="logo.png" alt="Sebou Digital">
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Accueil</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#process" class="nav-link">Process</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-cta-item">
+                    <a href="https://wa.me/212720648919" class="btn btn-cyan btn-sm">Parler sur WhatsApp</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions-mobile">
+                <a href="https://wa.me/212720648919" class="btn-whatsapp-mobile" aria-label="WhatsApp">
+                    <svg viewBox="0 0 448 512" width="20" height="20" fill="currentColor">
+                        <path
+                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.4-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.6-6.5 8.3-9.7 2.8-3.2 3.7-5.6 5.6-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                    </svg>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="d-flex flex-column align-center text-center">
+                <h1 class="fade-in-up">
+                    Site Web + WhatsApp + SEO<br>
+                    <span class="neon-text text-gradient-animated">Pour Accélérer Votre Croissance</span>
+                </h1>
+
+                <p class="fade-in hero-subtitle">
+                    Améliorez votre visibilité locale et recevez plus de demandes via WhatsApp avec une présence
+                    digitale honnête et performante, conçue pour les entrepreneurs de Kénitra.
+                </p>
+
+                <div class="d-flex flex-column align-center gap-sm fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="d-flex gap-md flex-wrap justify-center">
+                        <a href="https://wa.me/212720648919" class="btn btn-cyan btn-lg">💬 Discuter de mon projet</a>
+                        <a href="#services" class="btn btn-outline btn-lg">📂 Voir les formules</a>
+                    </div>
+                    <p class="text-xs opacity-70">
+                        <span class="neon-cyan">●</span> Réponse rapide (souvent < 24h) &nbsp; <span class="neon-cyan">
+                            ●</span>
+                            Estimation gratuite & sans engagement
+                    </p>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="d-flex gap-lg flex-wrap justify-center mt-xl fade-in" style="animation-delay: 0.6s;">
+                    <div class="trust-badge">
+                        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                        <div class="stat-num">2 500 DH</div>
+                        <div class="stat-label">Site Vitrine</div>
+                    </div>
+                    <div class="trust-badge">
+                        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                        <div class="stat-num">14 Jours</div>
+                        <div class="stat-label">Délais garantis</div>
+                    </div>
+                    <div class="trust-badge">
+                        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <div class="stat-num">Support</div>
+                        <div class="stat-label">WhatsApp inclus</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROOF SECTION (REASSURANCE) -->
+        <section class="proof-section">
+            <div class="container">
+                <div class="proof-grid">
+                    <div class="proof-item fade-in" style="animation-delay: 0.1s;">
+                        <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <div class="proof-title">+15 Projets</div>
+                        <div class="proof-desc">Livrés avec succès au Maroc</div>
+                    </div>
+                    <div class="proof-item fade-in" style="animation-delay: 0.2s;">
+                        <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        <div class="proof-title">14 Jours</div>
+                        <div class="proof-desc">Délai moyen de livraison</div>
+                    </div>
+                    <div class="proof-item fade-in" style="animation-delay: 0.3s;">
+                        <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                        <div class="proof-title">Support 7j/7</div>
+                        <div class="proof-desc">Directement sur WhatsApp</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Decorative Wave -->
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%;">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                <path
+                    d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"
+                    fill="#FFFEF7" fill-opacity="1"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="services">
+        <div class="container">
+            <div class="pricing-title fade-in-up">
+                <h2>Mes Formules Digitales (Freelance)</h2>
+                <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto;">
+                    Des solutions concrètes et transparentes. Je travaille avec un nombre limité de projets par mois
+                    pour garantir une qualité maximale.
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+
+                <!-- FORMULE STARTER -->
+                <div class="pricing-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="pricing-header">
+                        <div class="pricing-name">FORMULE <span>STARTER</span></div>
+                        <div class="pricing-price">2500 DH</div>
+                        <div class="pricing-subtitle">Idéal pour se lancer</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Landing Page (1 page)</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Intégration WhatsApp direct</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Optimisation mobile tactile</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Setup Google Analytics</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> 7 jours d'ajustements offerts</li>
+                        <li
+                            style="opacity: 0.8; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-top: 1rem;">
+                            Paiement en 2 fois possible
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/212720648919" class="pricing-btn btn-glow-primary">Choisir Starter</a>
+                </div>
+
+                <!-- FORMULE BUSINESS -->
+                <div class="pricing-card featured fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="pricing-badge-popular">Top Crédibilité</div>
+                    <div class="pricing-header">
+                        <div class="pricing-name">FORMULE <span>BUSINESS</span></div>
+                        <div class="pricing-price">5500 DH</div>
+                        <div class="pricing-subtitle">Solution de croissance complète</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Site Complet (jusqu'à 5 pages)</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Stratégie WhatsApp Marketing</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Référencement Google Kénitra</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Google Business Profile setup</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Accompagnement (1h offerte)</li>
+                        <li
+                            style="opacity: 0.8; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-top: 1rem;">
+                            Facturation simple – paiement 2x possible
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/212720648919" class="pricing-btn btn-glow-primary">Choisir Business</a>
+                </div>
+
+                <!-- PROJET SUR MESURE -->
+                <div class="pricing-card fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="pricing-header">
+                        <div class="pricing-name">PROJET <span>SUR MESURE</span></div>
+                        <div class="pricing-price"><span style="font-size: 1rem;">À partir de 8500 DH</span></div>
+                        <div class="pricing-subtitle">Solution avancée / E-commerce</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> E-commerce ou Plateforme</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Fonctionnalités spécifiques</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Design UX/UI haute performance</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Maintenance technique incluse</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg> Support technique VIP</li>
+                    </ul>
+                    <a href="https://wa.me/212720648919" class="pricing-btn btn-glow-primary">Discuter de
+                        l'estimation</a>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-xl fade-in-up" style="animation-delay: 0.4s;">
+                <p class="text-muted mb-md">
+                    Curieux de voir un exemple concret ?
+                </p>
+                <a href="exemple-restaurant.html" target="_blank" class="btn btn-outline btn-lg">
+                    👁️ Visualiser le projet "Le Jardin Sebou"
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDY SECTION -->
+    <section class="section case-study-section">
+        <div class="container">
+            <div class="d-grid gap-xl align-center case-study-grid">
+
+                <!-- Content -->
+                <div class="fade-in-up">
+                    <div class="badge badge-neon">Étude de Cas : Restauration</div>
+                    <h2 class="mb-md">Le Jardin Sebou : <br><span class="neon-text">Digitalisation & Croissance
+                            Locale</span></h2>
+
+                    <p class="mb-md text-lg">
+                        <strong>Le Défi :</strong> Un restaurant emblématique de Kénitra perdait des réservations par
+                        manque de visibilité mobile et un système de commande obsolète.
+                    </p>
+
+                    <ul class="case-study-list mb-lg">
+                        <li><span class="cross">❌</span> Perte de clients aux heures de pointe</li>
+                        <li><span class="cross">❌</span> Menu PDF illisible & non interactif</li>
+                        <li><span class="red-dot">●</span> <strong>Besoin :</strong> Automatisation & Visibilité Google
+                        </li>
+                    </ul>
+
+                    <div class="case-study-solution mb-lg">
+                        <h4 class="mb-xs">Résultats (Réels)</h4>
+                        <p class="text-secondary mb-sm">
+                            Depuis la digitalisation, le restaurant gère ses commandes plus fluidement grâce au menu QR
+                            et WhatsApp.
+                        </p>
+                        <div class="d-flex gap-sm flex-wrap">
+                            <span class="badge-mini">Fluidité Service</span>
+                            <span class="badge-mini">Clients Satisfaits</span>
+                            <span class="badge-mini">Meilleure Visibilité</span>
+                        </div>
+                    </div>
+
+                    <a href="exemple-restaurant.html" class="btn btn-primary">Voir le résultat en direct &nbsp; ↗</a>
+                </div>
+
+                <!-- Visual -->
+                <div class="fade-in case-study-visual">
+                    <div class="card card-glass case-study-card">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Projet Le Jardin Sebou - Sebou Digital">
+                        <div class="case-study-footer">
+                            <div class="d-flex justify-between align-center">
+                                <span class="fw-bold">Le Jardin Sebou</span>
+                                <span class="status-online">En ligne ●</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Stats Floating -->
+                    <div class="floating-stat">
+                        <div class="stat-label-mini">Visibilité Locale</div>
+                        <div class="stat-value-mini">Objectif atteint</div>
+                    </div>
+                    <div class="floating-stat" style="top: auto; bottom: 20px; left: -20px;">
+                        <div class="stat-label-mini">Demandes Clients</div>
+                        <div class="stat-value-mini">Flux WhatsApp constant</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDY: VINTAGE MANIA -->
+    <section class="section"
+        style="background: linear-gradient(135deg, #1a1510 0%, #0d0a07 100%); position: relative; overflow: hidden;">
+        <!-- Subtle grain texture overlay -->
+        <div
+            style="position: absolute; inset: 0; background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E'); opacity: 0.03;">
+        </div>
+
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="d-grid align-center" style="grid-template-columns: 1fr 1.2fr; gap: 4rem;">
+
+                <!-- Visual -->
+                <div class="fade-in" style="order: 1;">
+                    <div
+                        style="position: relative; border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 100px rgba(193, 154, 107, 0.1);">
+                        <img src="vintage-mania-cover.jpg" alt="Vintage Mania - Boutique Thrift Maroc"
+                            style="width: 100%; height: 400px; object-fit: cover; object-position: center top;">
+                        <div
+                            style="position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: linear-gradient(to top, rgba(13,10,7,0.9), transparent);">
+                        </div>
+                        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div
+                                    style="width: 50px; height: 50px; background: linear-gradient(135deg, #c19a6b, #8b7355); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    👕</div>
+                                <div>
+                                    <div
+                                        style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; color: #f5e6d3;">
+                                        VINTAGE MANIA</div>
+                                    <div style="font-size: 0.875rem; color: #c19a6b;">Drops & Thrift • Maroc</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        style="position: relative; margin-top: -1.5rem; margin-left: 2rem; display: inline-block; background: rgba(193, 154, 107, 0.15); border: 1px solid rgba(193, 154, 107, 0.3); backdrop-filter: blur(10px); padding: 0.75rem 1.25rem; border-radius: 2rem;">
+                        <span style="color: #c19a6b; font-weight: 600; font-size: 0.875rem;">🛒 Catalogue +
+                            WhatsApp</span>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="fade-in-up" style="order: 2;">
+                    <div
+                        style="display: inline-block; background: linear-gradient(135deg, #c19a6b, #8b7355); color: #1a1510; padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem;">
+                        Étude de Cas : E-commerce
+                    </div>
+
+                    <h2
+                        style="color: #f5e6d3; font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1rem; line-height: 1.2;">
+                        Vintage Mania :<br>
+                        <span
+                            style="background: linear-gradient(90deg, #c19a6b, #d4a574); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Catalogue
+                            Digital & Vente WhatsApp</span>
+                    </h2>
+
+                    <p
+                        style="color: rgba(245, 230, 211, 0.8); font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.7;">
+                        <strong style="color: #f5e6d3;">Le Défi :</strong> Créer une plateforme moderne pour une
+                        boutique thrift/vintage avec gestion de catalogue et commandes 100% via WhatsApp.
+                    </p>
+
+                    <ul style="list-style: none; margin-bottom: 1.5rem; padding: 0;">
+                        <li
+                            style="color: rgba(245, 230, 211, 0.8); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
+                            <span style="color: #c19a6b;">✓</span> Catalogue produits avec filtres par catégorie
+                        </li>
+                        <li
+                            style="color: rgba(245, 230, 211, 0.8); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
+                            <span style="color: #c19a6b;">✓</span> Système "Drops" pour nouvelles arrivages
+                        </li>
+                        <li
+                            style="color: rgba(245, 230, 211, 0.8); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
+                            <span style="color: #c19a6b;">✓</span> Commande directe via WhatsApp intégré
+                        </li>
+                        <li
+                            style="color: rgba(245, 230, 211, 0.8); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
+                            <span style="color: #c19a6b;">✓</span> Design vintage/terreux premium
+                        </li>
+                    </ul>
+
+                    <div
+                        style="background: rgba(193, 154, 107, 0.1); border: 1px solid rgba(193, 154, 107, 0.2); border-radius: 0.75rem; padding: 1.25rem; margin-bottom: 1.5rem;">
+                        <h4 style="color: #c19a6b; font-size: 1rem; margin-bottom: 0.5rem;">Technologies Utilisées</h4>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <span
+                                style="background: rgba(193, 154, 107, 0.2); color: #d4a574; padding: 0.35rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Next.js</span>
+                            <span
+                                style="background: rgba(193, 154, 107, 0.2); color: #d4a574; padding: 0.35rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">TypeScript</span>
+                            <span
+                                style="background: rgba(193, 154, 107, 0.2); color: #d4a574; padding: 0.35rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Vercel</span>
+                            <span
+                                style="background: rgba(193, 154, 107, 0.2); color: #d4a574; padding: 0.35rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">WhatsApp
+                                API</span>
+                        </div>
+                    </div>
+
+                    <a href="https://vintage-mania.vercel.app/" target="_blank" rel="noopener"
+                        style="display: inline-flex; align-items: center; gap: 0.75rem; background: linear-gradient(135deg, #c19a6b, #a68b5b); color: #1a1510; padding: 1rem 1.75rem; border-radius: 0.75rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(193, 154, 107, 0.3);">
+                        Voir le site en direct ↗
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" style="background: var(--ink-surface); position: relative;">
+        <!-- Neon Line Top -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent); opacity: 0.3;">
+        </div>
+        <div class="container">
+            <div class="text-center mb-xl">
+                <p style="font-size: 1.125rem; color: var(--gray-600);">
+                    Un développeur freelance local qui comprend vos besoins
+                </p>
+            </div>
+
+            <div class="d-grid gap-lg" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="text-center">
+                    <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🎯</div>
+                    <h4>Expertise Locale</h4>
+                    <p style="color: var(--gray-600);">
+                        Je connais le marché de Kénitra et j'adapte mes solutions à votre clientèle locale
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">⚡</div>
+                    <h4>Livraison Rapide</h4>
+                    <p style="color: var(--gray-600);">
+                        Sites web livrés en 7 à 14 jours. Commencez à digitaliser rapidement votre activité
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">💰</div>
+                    <h4>Prix Adaptés</h4>
+                    <p style="color: var(--gray-600);">
+                        Tarifs transparents et compétitifs adaptés aux budgets des PME et entrepreneurs marocains. Pas
+                        de frais de structure lourde !
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🤝</div>
+                    <h4>Support Continu</h4>
+                    <p style="color: var(--gray-600);">
+                        Accompagnement et support après livraison. Je reste à vos côtés pour toute question
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="section" style="background: var(--bg-dark);">
+        <div class="container">
+            <div class="d-grid gap-xl align-center"
+                style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div>
+                    <span class="badge badge-neon mb-md">À Propos</span>
+                    <h2 class="mb-md">Qui suis-je ?</h2>
+                    <p class="mb-md text-lg">
+                        Je m'appelle <strong>Marwane</strong>, développeur web freelance passionné basé à Kénitra.
+                    </p>
+                    <p class="text-secondary mb-lg">
+                        Je ne suis pas une agence, mais un partenaire indépendant. Je m'occupe personnellement de votre
+                        projet, de la conception à la mise en ligne, pour garantir un résultat sur-mesure et une
+                        communication fluide.
+                    </p>
+                    <p class="text-secondary mb-lg">
+                        Mon objectif : rendre le digital accessible et rentable pour les entrepreneurs locaux.
+                    </p>
+                </div>
+                <div class="card card-glass text-center">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">👨‍💻</div>
+                    <h4>Marwane / Sebou Digital</h4>
+                    <p class="text-muted mb-md">Développeur & Consultant</p>
+                    <div class="d-flex gap-md justify-center">
+                        <a href="https://linkedin.com/in/marwane-benseghir" target="_blank"
+                            class="btn btn-outline btn-sm">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section" id="process">
+        <div class="container">
+            <div class="text-center mb-xl">
+                <h2>Mon Processus de Travail</h2>
+                <p style="font-size: 1.125rem; color: var(--text-secondary);">
+                    4 étapes simples pour votre site web professionnel
+                </p>
+            </div>
+
+            <div class="d-grid gap-lg" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="card text-center">
+                    <div
+                        style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 800; color: white; margin: 0 auto var(--spacing-md);">
+                        1
+                    </div>
+                    <h4>Consultation</h4>
+                    <p style="color: var(--text-muted);">
+                        Discussion gratuite sur votre projet, vos besoins et vos objectifs
+                    </p>
+                </div>
+
+                <div class="card text-center">
+                    <div
+                        style="width: 80px; height: 80px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 800; color: white; margin: 0 auto var(--spacing-md);">
+                        2
+                    </div>
+                    <h4>Conception</h4>
+                    <p style="color: var(--gray-600);">
+                        Création du design et de la structure de votre site web
+                    </p>
+                </div>
+
+                <div class="card text-center">
+                    <div
+                        style="width: 80px; height: 80px; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 800; color: white; margin: 0 auto var(--spacing-md);">
+                        3
+                    </div>
+                    <h4>Développement</h4>
+                    <p style="color: var(--gray-600);">
+                        Développement professionnel et test de votre site
+                    </p>
+                </div>
+
+                <div class="card text-center">
+                    <div
+                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #E67E22 0%, #16A085 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 800; color: white; margin: 0 auto var(--spacing-md);">
+                        4
+                    </div>
+                    <h4>Lancement</h4>
+                    <p style="color: var(--gray-600);">
+                        Mise en ligne et formation pour gérer votre site
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: var(--gradient-hero); color: white;">
+        <div class="container text-center">
+            <h2 style="color: white; font-size: clamp(2rem, 4vw, 3rem);">
+                Envie d'une Estimation Gratuite ?
+            </h2>
+            <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto var(--spacing-xl); opacity: 0.95;">
+                Discutons de vos objectifs et voyons comment je peux vous aider à Kénitra.
+            </p>
+            <a href="https://wa.me/212720648919" class="btn btn-secondary btn-lg">
+                💬 Discuter de mon projet sur WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section" id="reviews" style="background: var(--ink-surface);">
+        <div class="container">
+            <div class="text-center mb-xl">
+                <h2>Avis Clients</h2>
+                <p style="font-size: 1.125rem; color: var(--text-secondary);">
+                    Ce que disent les entrepreneurs qui ont fait confiance à Sebou Digital.
+                </p>
+                <!-- Badge de confiance -->
+                <div style="margin-top: 1rem;">
+                    <span class="badge"
+                        style="background: rgba(0, 229, 255, 0.1); color: var(--neon-cyan); border: 1px solid var(--neon-cyan);">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
+                            style="vertical-align: text-bottom; margin-right: 5px;">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                        Avis vérifiés via Google Sign-In
+                    </span>
+                </div>
+            </div>
+
+            <!-- Liste des avis -->
+            <div id="reviews-list" class="d-grid gap-md mb-xl"
+                style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <!-- Les avis seront chargés ici via JS -->
+                <div class="text-center py-xl" id="reviews-loading">
+                    <p class="text-secondary">Chargement des avis...</p>
+                </div>
+            </div>
+
+            <!-- Zone d'action (Login ou Formulaire) -->
+            <div class="card text-center"
+                style="max-width: 600px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.05);">
+
+                <!-- État : Non connecté -->
+                <div id="auth-container">
+                    <h4 class="mb-md">Laissez votre avis</h4>
+                    <p class="text-muted mb-md">Connectez-vous avec Google pour poster un avis vérifié.</p>
+                    <button class="btn btn-primary" onclick="netlifyIdentity.open()">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"
+                            style="vertical-align: sub; margin-right: 8px;">
+                            <path
+                                d="M12.545 10.239v3.821h5.445c-0.712 2.315-2.647 3.972-5.445 3.972-3.332 0-6.033-2.701-6.033-6.032s2.701-6.032 6.033-6.032c1.498 0 2.866 0.549 3.921 1.453l2.814-2.814c-1.79-1.677-4.184-2.702-6.735-2.702-5.522 0-10 4.478-10 10s4.478 10 10 10c8.396 0 10.249-7.85 9.426-11.748l-9.426 0.082z" />
+                        </svg>
+                        Se connecter avec Google
+                    </button>
+                </div>
+
+                <!-- État : Connecté -->
+                <div id="review-form-container" style="display: none;">
+                    <div class="d-flex justify-between align-center mb-md">
+                        <span id="user-display-name" style="font-weight: 600; color: var(--neon-cyan);">User</span>
+                        <a href="#" onclick="netlifyIdentity.logout(); return false;"
+                            style="font-size: 0.875rem; color: var(--text-muted); text-decoration: underline;">Déconnexion</a>
+                    </div>
+
+                    <form id="reviewForm">
+                        <div style="margin-bottom: var(--spacing-md);">
+                            <label class="text-left d-block mb-xs" style="font-weight: 600;">Votre note</label>
+                            <div class="rating-stars text-left">
+                                <select id="review-rating" class="input-field"
+                                    style="width: auto; display: inline-block;">
+                                    <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
+                                    <option value="4">⭐⭐⭐⭐ (Très bien)</option>
+                                    <option value="3">⭐⭐⭐ (Bien)</option>
+                                    <option value="2">⭐⭐ (Moyen)</option>
+                                    <option value="1">⭐ (À améliorer)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: var(--spacing-md);">
+                            <label for="review-comment" class="text-left d-block mb-xs" style="font-weight: 600;">Votre
+                                expérience (max 600 car.)</label>
+                            <textarea id="review-comment" class="input-field w-100" rows="4" maxlength="600" required
+                                placeholder="Service rapide et professionnel..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Envoyer mon avis</button>
+                        <p class="text-muted mt-sm" style="font-size: 0.8rem;">Votre avis sera soumis à modération avant
+                            publication.</p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="text-center mb-xl">
+                <h2>Contactez-Nous</h2>
+                <p style="font-size: 1.125rem; color: var(--gray-600);">
+                    Parlons de votre projet digital
+                </p>
+            </div>
+
+            <div class="d-grid gap-lg"
+                style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); max-width: 900px; margin: 0 auto;">
+
+                <!-- Contact Form -->
+                <div class="card"
+                    style="border: 1px solid var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);">
+                    <h3 style="margin-bottom: var(--spacing-lg); color: var(--white);">Envoyez-nous un message</h3>
+
+                    <!-- REMPLACEZ 'YOUR_FORM_ID' PAR VOTRE PROPRE ID FORMSPREE (GRATUIT SUR FORMSPREE.IO) -->
+                    <form id="contactForm" action="https://formspree.io/f/mqakpeoy" method="POST">
+                        <div style="margin-bottom: var(--spacing-md);">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Nom
+                                complet</label>
+                            <input type="text" id="name" name="name" required
+                                style="width: 100%; padding: 0.875rem; border: 2px solid var(--gray-300); border-radius: var(--radius-md); font-size: var(--fs-base); transition: border-color var(--transition-base);"
+                                onfocus="this.style.borderColor='var(--primary-color)'"
+                                onblur="this.style.borderColor='var(--gray-300)'">
+                        </div>
+
+                        <div style="margin-bottom: var(--spacing-md);">
+                            <label for="contact_info"
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Téléphone ou
+                                Email</label>
+                            <input type="text" id="contact_info" name="contact_info" required
+                                placeholder="06 XX XX XX XX ou email@exemple.com"
+                                style="width: 100%; padding: 0.875rem; border: 2px solid var(--gray-300); border-radius: var(--radius-md); font-size: var(--fs-base);"
+                                onfocus="this.style.borderColor='var(--primary-color)'"
+                                onblur="this.style.borderColor='var(--gray-300)'">
+                        </div>
+
+                        <div style="margin-bottom: var(--spacing-lg);">
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Votre
+                                message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                style="width: 100%; padding: 0.875rem; border: 2px solid var(--gray-300); border-radius: var(--radius-md); font-size: var(--fs-base); font-family: inherit; resize: vertical;"
+                                onfocus="this.style.borderColor='var(--primary-color)'"
+                                onblur="this.style.borderColor='var(--gray-300)'"></textarea>
+                        </div>
+
+
+                        <div
+                            style="margin-bottom: var(--spacing-md); display: flex; align-items: flex-start; gap: 10px;">
+                            <input type="checkbox" id="privacy" name="privacy" required style="margin-top: 5px;">
+                            <label for="privacy" style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                                J'accepte que mes informations soient utilisées pour me recontacter. <a
+                                    href="informations.html"
+                                    style="color: var(--neon-cyan); text-decoration: underline;">Politique de
+                                    confidentialité</a>.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-grid">
+                    <div class="card mb-md">
+                        <div class="contact-icon">📍</div>
+                        <h4>Ma zone de service</h4>
+                        <p class="text-secondary">Basé à Kénitra<br>Service dans tout le Maroc</p>
+                    </div>
+
+                    <div class="card mb-md">
+                        <div class="contact-icon">📞</div>
+                        <h4>Téléphone</h4>
+                        <p class="text-secondary">+212 720 648 919<br>Lun - Ven : 9h - 18h</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="contact-icon">✉️</div>
+                        <h4>Email</h4>
+                        <p class="text-secondary">seboudigital@gmail.com<br>Réponse rapide (souvent < 24h)</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        style="background: #020617; color: var(--text-muted); padding: var(--spacing-2xl) 0 var(--spacing-md); border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="d-grid gap-lg"
+                style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-bottom: var(--spacing-xl);">
+
+                <div>
+                    <div
+                        style="font-family: var(--font-primary); font-size: var(--fs-xl); font-weight: 800; color: white; margin-bottom: var(--spacing-md);">
+                        🌊 Sebou Digital
+                    </div>
+                    <p style="margin-bottom: var(--spacing-md);">
+                        Développeur web freelance à Kénitra. Transformons ensemble votre présence digitale avec un
+                        service personnalisé.
+                    </p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="https://linkedin.com/in/marwane-benseghir" target="_blank" aria-label="LinkedIn"
+                            style="color: var(--gray-400); transition: color 0.3s;"
+                            onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray-400)'">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 style="color: white; margin-bottom: var(--spacing-md);">Services</h5>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="service-sites-vitrines.html"
+                                style="color: var(--gray-400);">Sites
+                                Vitrines</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#services"
+                                style="color: var(--gray-400);">E-commerce</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="service-digitalisation-restaurant.html"
+                                style="color: var(--gray-400);">Menu QR
+                                Code</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="service-digitalisation-restaurant.html"
+                                style="color: var(--gray-400);">Digitalisation Restaurant</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 style="color: white; margin-bottom: var(--spacing-md);">Liens Rapides</h5>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#home" style="color: var(--gray-400);">Accueil</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#services"
+                                style="color: var(--gray-400);">Services</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#process" style="color: var(--gray-400);">Notre
+                                Processus</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#contact"
+                                style="color: var(--gray-400);">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 style="color: white; margin-bottom: var(--spacing-md);">Zone de Service</h5>
+                    <p>
+                        🎯 Spécialement Kénitra<br>
+                        🇲🇦 Tout le Maroc<br>
+                        📍 Casablanca, Rabat, Marrakech
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sebou Digital. Création de sites web professionnels au Maroc.</p>
+                <p style="font-size: 0.8rem; margin-top: 0.5rem;">
+                    <a href="informations.html"
+                        style="color: var(--gray-400); text-decoration: none; border-bottom: 1px dotted var(--gray-500);">Informations</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/212720648919?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20services%20web"
+        class="whatsapp-float" target="_blank" aria-label="Contact on WhatsApp">
+        <svg viewBox="0 0 32 32" class="whatsapp-icon">
+            <path
+                d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.396 5.194 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.924 0-7.435 6.048-13.483 13.483-13.483s13.483 6.048 13.483 13.483c0 7.435-6.048 13.483-13.483 13.483zM21.894 18.526c-0.297-0.149-1.757-0.868-2.031-0.967-0.272-0.099-0.47-0.149-0.669 0.149s-0.768 0.967-0.941 1.166-0.347 0.223-0.644 0.075-1.255-0.462-2.39-1.475c-0.883-0.788-1.48-1.761-1.653-2.059s-0.018-0.458 0.131-0.606c0.134-0.133 0.297-0.347 0.446-0.521s0.198-0.297 0.297-0.495c0.099-0.198 0.050-0.372-0.025-0.521s-0.669-1.612-0.916-2.207c-0.242-0.579-0.487-0.501-0.669-0.510-0.173-0.001-0.372-0.012-0.57-0.012s-0.52 0.075-0.792 0.372c-0.272 0.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c0.149 0.198 2.095 3.2 5.076 4.487 0.709 0.306 1.263 0.489 1.694 0.626 0.712 0.226 1.36 0.194 1.872 0.118 0.571-0.085 1.757-0.719 2.006-1.413 0.248-0.694 0.248-1.289 0.173-1.413s-0.272-0.198-0.57-0.347z">
+            </path>
+        </svg>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
