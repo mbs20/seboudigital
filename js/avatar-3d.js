@@ -2,11 +2,12 @@ import * as THREE from 'three';
 import { FBXLoader } from './vendor/FBXLoader.js';
 
 /**
- * SEBOU DIGITAL - AVATAR 3D (OPTIMIZED)
+ * SEBOU DIGITAL - AVATAR 3D (LAZY LOADING OPTIMIZED)
  * Performance upgrades:
- * 1. Visibility Culling (Stops rendering when off-screen)
- * 2. PixelRatio Cap (Max 2x for performance on high-DPI screens)
- * 3. Robust Error Handling
+ * 1. LAZY LOADING: Models only load when zone becomes visible
+ * 2. Visibility Culling (Stops rendering when off-screen)
+ * 3. PixelRatio Cap (Max 2x for performance on high-DPI screens)
+ * 4. Robust Error Handling
  */
 
 window.avatars = [];
@@ -27,6 +28,7 @@ class AvatarZone {
         // State Flags
         this.isVisible = false;
         this.isLoaded = false;
+        this.isLoading = false; // NEW: Prevent double-loading
         this.animationFrameId = null;
 
         this.scene = null;
@@ -56,7 +58,6 @@ class AvatarZone {
             // Renderer Optimized
             this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
             this.renderer.setSize(w, h);
-            // OPTIMIZATION: Cap pixel ratio to save battery/GPU
             this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             this.container.appendChild(this.renderer.domElement);
 
@@ -69,16 +70,15 @@ class AvatarZone {
             dirLight.position.set(0, 200, 100);
             this.scene.add(dirLight);
 
-            // Load
-            this.loadBaseModel();
+            // LAZY LOADING: Do NOT load model here. Wait for visibility.
+            // this.loadBaseModel(); // REMOVED
 
             // Observers
             this.setupResizeObserver();
-            this.setupVisibilityObserver();
+            this.setupVisibilityObserver(); // This will trigger load when visible
 
         } catch (e) {
             console.error(`AvatarZone [${this.id}] Critical Init Error:`, e);
-            // Hide container on crash to prevent ugly blank box
             this.container.style.display = 'none';
         }
     }
@@ -88,12 +88,18 @@ class AvatarZone {
             entries.forEach(entry => {
                 this.isVisible = entry.isIntersecting;
                 if (this.isVisible) {
+                    // LAZY LOADING: Start loading model when first visible
+                    if (!this.isLoaded && !this.isLoading) {
+                        this.isLoading = true;
+                        console.log(`[${this.id}] Zone visible - Starting lazy load...`);
+                        this.loadBaseModel();
+                    }
                     this.startRendering();
                 } else {
                     this.stopRendering();
                 }
             });
-        }, { threshold: 0.1 }); // Trigger when 10% visible
+        }, { threshold: 0.1, rootMargin: '100px' }); // rootMargin: start loading slightly before visible
 
         observer.observe(this.container);
     }
@@ -105,12 +111,25 @@ class AvatarZone {
 
     loadBaseModel() {
         const loader = new FBXLoader();
+        console.log(`[${this.id}] Loading: ${this.modelFile}.fbx`);
+
         loader.load(`assets/3d/${this.modelFile}.fbx`, (object) => {
+            console.log(`[${this.id}] Loaded: ${this.modelFile}.fbx`);
             this.setupModel(object);
             this.loadAdditionalAnimations();
             this.isLoaded = true;
-            if (this.isVisible) this.startRendering(); // Start immediately if visible
-        }, undefined, (e) => console.error(`[${this.id}] Error loading ${this.modelFile}:`, e));
+            this.isLoading = false;
+            if (this.isVisible) this.startRendering();
+        },
+            // Progress callback (optional: can show loading indicator)
+            (xhr) => {
+                // const percent = (xhr.loaded / xhr.total * 100).toFixed(0);
+                // console.log(`[${this.id}] Loading... ${percent}%`);
+            },
+            (e) => {
+                console.error(`[${this.id}] Error loading ${this.modelFile}:`, e);
+                this.isLoading = false;
+            });
     }
 
     setupModel(object) {
@@ -216,7 +235,8 @@ class AvatarZone {
     }
 
     startRendering() {
-        if (this.animationFrameId) return; // Already running
+        if (this.animationFrameId) return;
+        if (!this.isLoaded) return; // Don't render until model is loaded
         this.animate();
     }
 
@@ -228,7 +248,7 @@ class AvatarZone {
     }
 
     animate() {
-        if (!this.renderer || !this.isVisible) return; // double check visibility
+        if (!this.renderer || !this.isVisible) return;
 
         this.animationFrameId = requestAnimationFrame(() => this.animate());
 
@@ -240,26 +260,24 @@ class AvatarZone {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Helper: Delay initialization slightly to prioritize main content paint
-    setTimeout(() => {
-        new AvatarZone({
-            id: 'HERO',
-            containerId: 'avatar-zone-hero',
-            modelFile: 'Entry',
-            animations: [
-                { name: 'ENTRY', file: 'Entry', loopOnce: true, next: 'HAPPY_IDLE' },
-                { name: 'HAPPY_IDLE', file: '000 Happy Idle', loopOnce: false }
-            ]
-        });
+    // No delay needed anymore - zones are lazy loaded when visible
+    new AvatarZone({
+        id: 'HERO',
+        containerId: 'avatar-zone-hero',
+        modelFile: 'Entry',
+        animations: [
+            { name: 'ENTRY', file: 'Entry', loopOnce: true, next: 'HAPPY_IDLE' },
+            { name: 'HAPPY_IDLE', file: '000 Happy Idle', loopOnce: false }
+        ]
+    });
 
-        new AvatarZone({
-            id: 'WAVE',
-            containerId: 'avatar-zone-wave',
-            modelFile: 'Treading Water',
-            animations: [
-                { name: 'TREADING', file: 'Treading Water', loopOnce: false }
-            ]
-        });
-    }, 100); // 100ms delay helps Lighthouse score / perceived load
+    new AvatarZone({
+        id: 'WAVE',
+        containerId: 'avatar-zone-wave',
+        modelFile: 'Treading Water',
+        animations: [
+            { name: 'TREADING', file: 'Treading Water', loopOnce: false }
+        ]
+    });
 
 });
