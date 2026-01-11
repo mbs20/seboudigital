@@ -11,7 +11,17 @@
 
     <!-- SEO Meta Tags -->
     <title>Création Site Web Kénitra | Freelance Web - Sebou Digital</title>
+
+    <!-- Local Three.js Import Map -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./js/vendor/three.module.js"
+            }
+        }
+    </script>
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link rel="stylesheet" href="css/nexo-chat.css">
     <meta name="description"
         content="Développeur web freelance à Kénitra. Sites vitrines, e-commerce et digitalisation sur-mesure. Boostez votre visibilité au Maroc avec Sebou Digital.">
     <meta name="keywords"
@@ -108,8 +118,12 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
+        <!-- Avatar Zone 1: Hero (Right side) -->
+        <div id="avatar-zone-hero" class="avatar-zone"></div>
+        <!-- Nexo Trigger Zone (Invisible Click Layer) -->
+        <div id="nexo-trigger" title="Discuter avec Nexo"></div>
+
         <div class="container hero-content">
             <div class="d-flex flex-column align-center text-center">
                 <h1 class="fade-in-up">
@@ -202,6 +216,11 @@
                     fill="#FFFEF7" fill-opacity="1"></path>
             </svg>
         </div>
+    </section>
+
+    <!-- Avatar Zone 2: White Wave Section -->
+    <section id="avatar-zone-wave-section" class="avatar-wave-section">
+        <div id="avatar-zone-wave" class="avatar-zone"></div>
     </section>
 
     <section class="pricing-section" id="services">
@@ -812,7 +831,11 @@
                     <div class="card mb-md">
                         <div class="contact-icon">📍</div>
                         <h4>Ma zone de service</h4>
-                        <p class="text-secondary">Basé à Kénitra<br>Service dans tout le Maroc</p>
+                        <p class="text-secondary">
+                            <a href="https://maps.app.goo.gl/9aefKzoxbnJbSmhf8" target="_blank"
+                                style="color: inherit; text-decoration: underline;">Basé à Kénitra</a><br>
+                            Service dans tout le Maroc
+                        </p>
                     </div>
 
                     <div class="card mb-md">
@@ -849,6 +872,16 @@
                         service personnalisé.
                     </p>
                     <div style="display: flex; gap: 15px;">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/sebou_digital?igsh=MW9sZ2NwY3NtYzdsZg==" target="_blank"
+                            aria-label="Instagram" style="color: var(--gray-400); transition: color 0.3s;"
+                            onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='var(--gray-400)'">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
                         <a href="https://linkedin.com/in/marwane-benseghir" target="_blank" aria-label="LinkedIn"
                             style="color: var(--gray-400); transition: color 0.3s;"
                             onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray-400)'">
@@ -920,9 +953,35 @@
         </svg>
     </a>
 
+    <!-- NEXO CHAT CONTAINER -->
+    <div id="nexo-chat-overlay" class="hidden">
+        <div id="nexo-chat-modal">
+            <div class="nexo-header">
+                <div class="nexo-avatar-icon">
+                    <img src="assets/images/logo.png" alt="Nexo" onerror="this.src='https://via.placeholder.com/40'">
+                </div>
+                <div class="nexo-title">
+                    <h3>Nexo</h3>
+                    <span class="status-online">En ligne</span>
+                </div>
+                <button id="nexo-close-btn">&times;</button>
+            </div>
+            <div id="nexo-chat-body">
+                <!-- Messages will appear here -->
+            </div>
+            <div id="nexo-chat-footer">
+                <!-- Options will appear here -->
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="script.js"></script>
-
+    <!-- Nexo Chat Logic -->
+    <script src="js/nexo-chat.js"></script>
+    <!-- 3D Avatar Assistant (Module) -->
+    <script type="module" src="js/avatar-3d.js"></script>
 </body>
 
 </html>
+```

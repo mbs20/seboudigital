@@ -2247,3 +2247,55 @@ select:focus {
     font-size: 1rem !important;
   }
 }
+
+/* ========== AVATAR ZONES (FIXED) ========== */
+.avatar-zone {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  z-index: 10;
+  pointer-events: none;
+  /* Let clicks pass through if needed, but we might want interaction later */
+  /* background: rgba(255, 0, 0, 0.2); Uncomment to debug zones */
+}
+
+/* Zone 1: Hero (Right of Title) */
+#avatar-zone-hero {
+  top: 15%;
+  right: 8%;
+  /* Slightly more centered to the right area */
+  width: 400px;
+  /* Bigger container */
+  height: 500px;
+}
+
+/* Zone 2: White Wave Section */
+.avatar-wave-section {
+  position: relative;
+  height: 0;
+  /* It's an overlay section essentially */
+  overflow: visible;
+  z-index: 20;
+}
+
+#avatar-zone-wave {
+  top: -250px;
+  /* Move UP to sit ON the white wave */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Center pivot */
+  width: 400px;
+  height: 500px;
+}
+
+@media (max-width: 992px) {
+  #avatar-zone-hero {
+    display: none;
+    /* Hide on mobile/tablet for now or adjust */
+  }
+
+  #avatar-zone-wave {
+    display: none;
+  }
+}

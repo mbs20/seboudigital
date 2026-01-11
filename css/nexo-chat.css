@@ -1,0 +1,194 @@
+/* NEXO CHATBOT STYLES */
+
+/* 1. Trigger Zone (Invisible button over Avatar) */
+#nexo-trigger {
+    position: absolute;
+    top: 15%;
+    right: 8%;
+    width: 400px;
+    /* Matches avatar-zone-hero */
+    height: 500px;
+    z-index: 50;
+    /* Above avatar canvas (z-index 10) */
+    cursor: pointer;
+    /* background: rgba(0, 255, 0, 0.2); Uncomment to debug position */
+}
+
+/* 2. Chat Overlay (Backdrop) */
+#nexo-chat-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+#nexo-chat-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 3. Chat Modal Window */
+#nexo-chat-modal {
+    width: 90%;
+    max-width: 400px;
+    background: rgba(20, 20, 40, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    height: 600px;
+    max-height: 80vh;
+}
+
+#nexo-chat-overlay.active #nexo-chat-modal {
+    transform: translateY(0);
+}
+
+/* Header */
+.nexo-header {
+    background: linear-gradient(90deg, #00C6FF, #0072FF);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.nexo-avatar-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.nexo-avatar-icon img {
+    width: 80%;
+}
+
+.nexo-title h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.status-online {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+}
+
+.status-online::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #00ff88;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+#nexo-close-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#nexo-close-btn:hover {
+    opacity: 1;
+}
+
+/* Body (Messages) */
+#nexo-chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Messages Bubbles */
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    animation: slideIn 0.3s ease;
+}
+
+.message.bot {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-bottom-left-radius: 2px;
+    align-self: flex-start;
+}
+
+.message.user {
+    background: #0072FF;
+    color: white;
+    border-bottom-right-radius: 2px;
+    align-self: flex-end;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer (Options) */
+#nexo-chat-footer {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.nexo-option-btn {
+    background: transparent;
+    border: 1px solid #00C6FF;
+    color: #00C6FF;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nexo-option-btn:hover {
+    background: #00C6FF;
+    color: white;
+    transform: translateY(-2px);
+}
